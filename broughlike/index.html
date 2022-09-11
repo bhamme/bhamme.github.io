@@ -7,7 +7,16 @@
   body {
     background-color: indigo;
     text-align: center;
-    margin-top: 50px;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  canvas.rotate {
+    transform: rotate(90deg);
   }
 </style>
 <canvas></canvas>
@@ -17,10 +26,11 @@
 <script src="js/spell.js"></script>
 <script src="js/tile.js"></script>
 <script src="js/util.js"></script>
+<script src="js/device.js"></script>
 <script>
-  tileSize = 64;
   numTiles = 9;
   uiWidth = 4;
+  tileSize = adjustedTileSize();
   level = 1;
   maxHp = 6;
 
