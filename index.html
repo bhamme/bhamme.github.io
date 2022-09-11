@@ -1,69 +1,24 @@
 <!DOCTYPE html>
-<title>AWESOME BROUGHLIKE</title>
-<style>
-  canvas {
-    outline: 1px solid white;
-  }
-  body {
-    background-color: indigo;
-    text-align: center;
-    margin-top: 50px;
-  }
-</style>
-<canvas></canvas>
-<script src="js/game.js"></script>
-<script src="js/map.js"></script>
-<script src="js/monster.js"></script>
-<script src="js/spell.js"></script>
-<script src="js/tile.js"></script>
-<script src="js/util.js"></script>
-<script>
-  tileSize = 64;
-  numTiles = 9;
-  uiWidth = 4;
-  level = 1;
-  maxHp = 6;
-
-  spritesheet = new Image()
-  spritesheet.src = './spritesheet.png';
-  spritesheet.onload = showTitle;
-
-  gameState = 'loading';
-
-  startingHp = 3;
-  numLevels = 6;
-
-  shakeAmount = 0;
-  shakeX = 0;
-  shakeY = 0;
-
-  document.querySelector('html').onkeydown = (e) => {
-    if (gameState === 'title') {
-      startGame();
-    } else if (gameState === 'dead') {
-      showTitle();
-    } else if (gameState === 'running') {
-      switch (e.key) {
-        case 'h':
-        case 'ArrowLeft':
-          player.tryMove(-1, 0);
-          break; 
-        case 'k': 
-        case 'ArrowUp':
-          player.tryMove(0, -1);
-          break; 
-        case 'j': 
-        case 'ArrowDown':
-          player.tryMove(0, 1);
-          break; 
-        case 'l': 
-        case 'ArrowRight':
-          player.tryMove(1, 0);
-          break; 
+<title>bhamme's page</title>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0;
       }
-    }
-  }
-
-  setInterval(draw, 15);
-  setupCanvas();
-</script>
+      body > div {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Nothing to see here</div>
+  </body>
+</html>
