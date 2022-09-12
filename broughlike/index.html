@@ -53,9 +53,6 @@
   document.onkeydown = (e) => {
     if (gameState === 'title') {
       startGame();
-      if (isMobile()) {
-        document.body.requestFullscreen()
-      }
     } else if (gameState === 'dead') {
       showTitle();
     } else if (gameState === 'running') {
@@ -80,6 +77,22 @@
     }
   }
 
-  setInterval(draw, 15);
-  setupCanvas();
+  if (!isMobile()) {
+    setInterval(draw, 15);
+    setupCanvas();
+  } else {
+    const button = document.createElement('button');
+    button.innerText = 'Start';
+    button.onclick = () => {
+      document.body.removeChild(button);
+      document.body.requestFullscreen().then(() => {
+        document.querySelector('canvas').style.visibility();
+        setInterval(draw, 15);
+        setupCanvas();
+        showTitle();
+      });
+    }
+    document.querySelector('canvas').style.visibility('hidden');
+    document.body.append(button);
+  }
 </script>
