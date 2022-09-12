@@ -86,7 +86,7 @@
     button.onclick = () => {
       document.body.removeChild(button);
       document.body.requestFullscreen().then(() => {
-        document.querySelector('canvas').style.visibility = undefined;
+        document.querySelector('canvas').style.visibility = '';
         setInterval(draw, 15);
         setupCanvas();
         showTitle();
