@@ -86,13 +86,13 @@
     button.onclick = () => {
       document.body.removeChild(button);
       document.body.requestFullscreen().then(() => {
-        document.querySelector('canvas').style.visibility();
+        document.querySelector('canvas').style.visibility = undefined;
         setInterval(draw, 15);
         setupCanvas();
         showTitle();
       });
     }
-    document.querySelector('canvas').style.visibility('hidden');
+    document.querySelector('canvas').style.visibility = 'hidden';
     document.body.append(button);
   }
 </script>
