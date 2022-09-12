@@ -42,6 +42,9 @@ function handleTouchEnd({ changedTouches }) {
         } else if (direction === 'west') {
           document.dispatchEvent(new KeyboardEvent('keydown', { key: 'h'}));
         }
+      } else {
+        // consider this a tap (useful for title/dead)
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: ';'}));
       }
     }
   }

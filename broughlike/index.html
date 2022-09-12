@@ -53,6 +53,9 @@
   document.onkeydown = (e) => {
     if (gameState === 'title') {
       startGame();
+      if (isMobile()) {
+        document.body.requestFullscreen()
+      }
     } else if (gameState === 'dead') {
       showTitle();
     } else if (gameState === 'running') {
