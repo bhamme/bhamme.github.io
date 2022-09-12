@@ -10,6 +10,8 @@ function setupCanvas() {
   canvas.style.width = canvas.width + 'px';
   canvas.style.height = canvas.height + 'px';
   ctx.imageSmoothingEnabled = false;
+
+  attachTouchListeners();
 }
 
 const SPRITE_WIDTH = 16;

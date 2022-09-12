@@ -28,6 +28,7 @@
 <script src="js/tile.js"></script>
 <script src="js/util.js"></script>
 <script src="js/device.js"></script>
+<script src="js/controls.js"></script>
 <script>
   numTiles = 9;
   uiWidth = 4;
@@ -48,7 +49,8 @@
   shakeX = 0;
   shakeY = 0;
 
-  document.querySelector('html').onkeydown = (e) => {
+  // .querySelector('html') ?
+  document.onkeydown = (e) => {
     if (gameState === 'title') {
       startGame();
     } else if (gameState === 'dead') {
