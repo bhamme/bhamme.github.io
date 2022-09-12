@@ -72,8 +72,6 @@ function tick() {
 }
 
 function showTitle() {
-  if (!window['ctx']) return; // happens on mobile
-
   ctx.fillStyle = 'rgba(0,0,0,.75)';
   ctx.fillRect(0,0,canvas.width,canvas.height);
   gameState = 'title';

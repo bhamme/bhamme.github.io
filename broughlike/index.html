@@ -77,22 +77,9 @@
     }
   }
 
-  if (!isMobile()) {
-    setInterval(draw, 15);
-    setupCanvas();
-  } else {
-    const button = document.createElement('button');
-    button.innerText = 'Start';
-    button.onclick = () => {
-      document.body.removeChild(button);
-      document.body.requestFullscreen().then(() => {
-        document.querySelector('canvas').style.visibility = '';
-        setInterval(draw, 15);
-        setupCanvas();
-        showTitle();
-      });
-    }
-    document.querySelector('canvas').style.visibility = 'hidden';
-    document.body.append(button);
+  if (isMobile()) {
+    document.body.style.height = window.innerHeight;
   }
+  setInterval(draw, 15);
+  setupCanvas();
 </script>
